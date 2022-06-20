@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    
     public Transform firePoint;
     public GameObject projectilePrefab;
 

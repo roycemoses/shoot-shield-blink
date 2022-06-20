@@ -9,8 +9,6 @@ public class PlayerAttack : MonoBehaviour
     public float attackRate = 10f;
     float nextAttackTime = 0f;
 
-    public float angle;
-
     public GameObject playerFirepoint;
     
     void Start()
@@ -21,8 +19,6 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        angle = PlayerShootCam.angle;
-
         if (Time.time >= nextAttackTime)
         {
             if (Input.GetButtonDown("Fire1"))

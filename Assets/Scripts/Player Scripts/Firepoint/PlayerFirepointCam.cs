@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerShootCam : MonoBehaviour
+public class PlayerFirepointCam : MonoBehaviour
 {  
     public Rigidbody2D rb;
     Vector2 mousePos;
@@ -26,7 +26,7 @@ public class PlayerShootCam : MonoBehaviour
     
         mouseDirection = mouseCursorPosition - rb.position;
         angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
-        Debug.Log("Angle: " + angle);
+        // Debug.Log("Angle: " + angle);
         rb.rotation = angle;
     }
 }

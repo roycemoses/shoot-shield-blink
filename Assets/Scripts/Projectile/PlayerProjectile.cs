@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1ProjectileScript : MonoBehaviour
+public class PlayerProjectile : MonoBehaviour
 {
     // public GameObject hitEffect;
     public GameObject player;
