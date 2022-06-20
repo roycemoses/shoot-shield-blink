@@ -225,10 +225,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 537478432}
+  - component: {fileID: 537478434}
   - component: {fileID: 537478436}
   - component: {fileID: 537478435}
-  - component: {fileID: 537478437}
-  - component: {fileID: 537478434}
   - component: {fileID: 537478433}
   m_Layer: 0
   m_Name: Firepoint
@@ -354,19 +353,7 @@ MonoBehaviour:
   rb: {fileID: 537478433}
   cam: {fileID: 182280570}
   mouseCursorPosition: {x: 0, y: 0}
---- !u!114 &537478437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537478431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e08a69c2ebb64db43939d096cd52bf92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shieldDuration: 0
+  shielding: 0
 --- !u!1 &569831121
 GameObject:
   m_ObjectHideFlags: 0
@@ -13653,7 +13640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   attackRate: 10
-  playerFirepoint: {fileID: 537478431}
+  playerFirepoint: {fileID: 0}
 --- !u!114 &1444516947
 MonoBehaviour:
   m_ObjectHideFlags: 0

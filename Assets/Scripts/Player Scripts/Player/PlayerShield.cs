@@ -37,12 +37,14 @@ public class PlayerShield : MonoBehaviour
         shield.SetActive(true);
         isShielding = true;
         firePoint.GetComponent<SpriteRenderer>().enabled = false;
+        firePoint.GetComponent<PlayerFirepointCam>().shielding = true;
 
         yield return new WaitForSeconds(shieldDurationSeconds);
             
         shield.SetActive(false);
         isShielding = false;
         firePoint.GetComponent<SpriteRenderer>().enabled = true;
+        firePoint.GetComponent<PlayerFirepointCam>().shielding = false;
 
         onCooldown = true;
 
