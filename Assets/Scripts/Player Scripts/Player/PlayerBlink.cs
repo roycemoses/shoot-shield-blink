@@ -28,9 +28,9 @@ public class PlayerBlink : MonoBehaviour
                 Vector3 direction = (mouseCursorPosition  - originalPosition).normalized;
                 Vector3 blinkToPosition = originalPosition + direction * blinkDistance;
                 
-                // Check if distance of originalPosition to mousePosition is less than distance of blinkDistance.
+                // Check if distance of originalPosition to mousePosition is less than distance of blinkDistance
                 if ((mouseCursorPosition - originalPosition).magnitude < blinkDistance)
-                    blinkToPosition = mouseCursorPosition;
+                    blinkToPosition = mouseCursorPosition - direction * 0.0001f; // extremely offset (to avoid bug: points RIGHT after a blink)
                     
 
                 // Check if blinkToPosition is out of bounds
