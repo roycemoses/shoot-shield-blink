@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFirepointCam : MonoBehaviour
+public class player2_hold_shield_toward_player1 : MonoBehaviour
 {  
     public Rigidbody2D rb;
     Vector2 mousePos;
@@ -30,7 +30,7 @@ public class PlayerFirepointCam : MonoBehaviour
 
         if (!shielding) // If not shielding, follow player cursor. If shielding, disable this part to maintain the shield's initial rotation
         {
-            mouseCursorPosition = CrosshairCursor.mouseCursorPosition;
+            mouseCursorPosition = GameObject.Find("Player1").transform.position;    
             mouseDirection = mouseCursorPosition - rb.position;
             angle = Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg;
             // Debug.Log("Angle: " + angle);

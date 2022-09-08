@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour
     
     void Start()
     {
-        playerFirepoint = GameObject.Find("Firepoint");
+        playerFirepoint = transform.Find("Firepoint").gameObject;
     }
 
     // Update is called once per frame

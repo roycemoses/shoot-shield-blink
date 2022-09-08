@@ -13,6 +13,7 @@ public class CameraController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		targetPos = transform.position;
+		target = GameObject.Find("Player1");
 	}
 	
 	// Update is called once per frame

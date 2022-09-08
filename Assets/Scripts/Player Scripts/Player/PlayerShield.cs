@@ -16,12 +16,11 @@ public class PlayerShield : MonoBehaviour
     
     void Start()
     {
-        shield = GameObject.Find("Shield");
+        firePoint = transform.Find("Firepoint").gameObject;
+        shield = firePoint.transform.Find("Shield").gameObject;
         shield.transform.position = transform.position;
         shield.SetActive(false);
         isShielding = false;
-
-        firePoint = GameObject.Find("Firepoint");
     }
 
     // Update is called once per frame
