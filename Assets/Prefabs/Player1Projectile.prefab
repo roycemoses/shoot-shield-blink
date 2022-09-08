@@ -145,9 +145,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  collisionMask:
+  shieldLayerMask:
     serializedVersion: 2
     m_Bits: 4096
+  playerLayerMask:
+    serializedVersion: 2
+    m_Bits: 16384
+  wallLayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
   projectilePrefab: {fileID: 5788264870803946050}
   speed: 5
   deflectionSpeed: 2
