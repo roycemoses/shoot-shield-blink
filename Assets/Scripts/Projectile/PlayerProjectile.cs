@@ -37,11 +37,18 @@ public class PlayerProjectile : MonoBehaviour
             // ENTER THE ANIMATION MODE (pause and wait for animation before the ricochet!)
         }
 
-        // Destroy projectile upon hitting wall
+        // Damage player and destroy projectile
         RaycastHit2D hitPlayer = Physics2D.Raycast(transform.position + transform.right * distanceFromSelfHitbox, transform.right, distanceBeforeDetection, playerLayerMask);
         if (hitPlayer.collider != null)
         {
-            // deal damage to player
+            hitPlayer.collider.transform.GetComponent<Player1Stats>().health -= 0.1f;
+            float currentPlayerHealth = hitPlayer.collider.transform.GetComponent<Player1Stats>().health;
+
+            if (currentPlayerHealth >= 0) // deal damage to player
+                hitPlayer.collider.transform.GetComponent<Player1Stats>().Player1HealthBar.GetComponent<HealthBar>().SetSize(currentPlayerHealth);
+            else
+                hitPlayer.collider.transform.GetComponent<Player1Stats>().Player1HealthBar.GetComponent<HealthBar>().SetSize(0);
+
             Destroy(gameObject);
         }
 

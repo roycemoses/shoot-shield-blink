@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d8c5d63f5dd65e54ab8d3a42ce979d14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 1561921738742883478}
   - component: {fileID: 1561921738742883479}
   - component: {fileID: 1561921738742883472}
+  - component: {fileID: 7913314381639582823}
   m_Layer: 14
   m_Name: Player1
   m_TagString: Untagged
@@ -316,6 +317,21 @@ MonoBehaviour:
   onCooldown: 0
   firePoint: {fileID: 0}
   shield: {fileID: 0}
+--- !u!114 &7913314381639582823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8755829373425257423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a56998146f938234fb038bc9897f40ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  stocks: 3
+  Player1HealthBar: {fileID: 0}
 --- !u!1 &8755829373659077276
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +406,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 86927c95d978d1c4a9e8d6a1895e3c3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
