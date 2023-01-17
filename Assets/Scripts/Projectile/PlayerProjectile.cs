@@ -44,10 +44,16 @@ public class PlayerProjectile : MonoBehaviour
             hitPlayer.collider.transform.GetComponent<Player1Stats>().health -= 0.1f;
             float currentPlayerHealth = hitPlayer.collider.transform.GetComponent<Player1Stats>().health;
 
-            if (currentPlayerHealth >= 0) // deal damage to player
+            if (currentPlayerHealth >= 0f) // deal damage to player
                 hitPlayer.collider.transform.GetComponent<Player1Stats>().Player1HealthBar.GetComponent<HealthBar>().SetSize(currentPlayerHealth);
             else
+            {
                 hitPlayer.collider.transform.GetComponent<Player1Stats>().Player1HealthBar.GetComponent<HealthBar>().SetSize(0);
+                GameObject.Find("Player1Stocks").GetComponent<Player1Stocks>().decrementStock();
+                hitPlayer.collider.transform.GetComponent<Player1Stats>().Player1HealthBar.GetComponent<HealthBar>().SetSize(1);
+                hitPlayer.collider.transform.GetComponent<Player1Stats>().health = 1f;
+            }
+            Debug.Log("currentPlayerHealth2: " + currentPlayerHealth);
 
             Destroy(gameObject);
         }
