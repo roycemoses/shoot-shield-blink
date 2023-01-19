@@ -9,7 +9,7 @@ public class Player2HealthBar : MonoBehaviour
 
     void Start()
     {
-        player2HealthBar = GameObject.Find("Player2HealthBar").transform;
+        player2HealthBar = GameObject.Find("Player2Bar").transform;
     }
 
     public void SetSize(float sizeNormalized)
