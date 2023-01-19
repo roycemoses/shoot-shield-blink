@@ -41,20 +41,18 @@ public class PlayerProjectile : MonoBehaviour
         RaycastHit2D hitPlayer = Physics2D.Raycast(transform.position + transform.right * distanceFromSelfHitbox, transform.right, distanceBeforeDetection, playerLayerMask);
         if (hitPlayer.collider != null)
         {
-            hitPlayer.collider.transform.GetComponent<Player1Stats>().health -= 0.1f;
-            float currentPlayerHealth = hitPlayer.collider.transform.GetComponent<Player1Stats>().health;
+            float currentPlayerHealth = hitPlayer.collider.transform.GetComponent<PlayerStats>().health;
+            currentPlayerHealth -= 0.4f;
 
             if (currentPlayerHealth >= 0f) // deal damage to player
-                hitPlayer.collider.transform.GetComponent<Player1Stats>().Player1HealthBar.GetComponent<HealthBar>().SetSize(currentPlayerHealth);
+            {
+                hitPlayer.collider.transform.GetComponent<PlayerStats>().SetHealth(currentPlayerHealth);
+            }
             else
             {
-                hitPlayer.collider.transform.GetComponent<Player1Stats>().Player1HealthBar.GetComponent<HealthBar>().SetSize(0);
-                GameObject.Find("Player1Stocks").GetComponent<Player1Stocks>().decrementStock();
-                hitPlayer.collider.transform.GetComponent<Player1Stats>().Player1HealthBar.GetComponent<HealthBar>().SetSize(1);
-                hitPlayer.collider.transform.GetComponent<Player1Stats>().health = 1f;
+                hitPlayer.collider.transform.GetComponent<PlayerStats>().DecrementStock();
+                hitPlayer.collider.transform.GetComponent<PlayerStats>().SetHealth(1f);
             }
-            Debug.Log("currentPlayerHealth2: " + currentPlayerHealth);
-
             Destroy(gameObject);
         }
 

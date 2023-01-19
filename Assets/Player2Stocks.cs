@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player1Stocks : MonoBehaviour
+public class Player2Stocks : MonoBehaviour
 {
     public GameObject[] stocksArr;
     public Sprite emptyStock;
-    public Sprite player1Stock;
+    public Sprite player2Stock;
     public int numStocks;
     public int currentStock;
 
@@ -16,7 +16,7 @@ public class Player1Stocks : MonoBehaviour
         for (int i = 0; i < numStocks; i++)
             stocksArr[i] = this.gameObject.transform.GetChild(i).gameObject;
         emptyStock = GameObject.Find("EmptyStock").GetComponent<SpriteRenderer>().sprite;
-        player1Stock = GameObject.Find("Player1Stock").GetComponent<SpriteRenderer>().sprite;
+        player2Stock = GameObject.Find("Player2Stock").GetComponent<SpriteRenderer>().sprite;
         numStocks = 3;
         currentStock = numStocks - 1;
     }
@@ -25,6 +25,7 @@ public class Player1Stocks : MonoBehaviour
     {
         if (currentStock >= 0)
         {
+            Debug.Log("currentStock: " + currentStock);
             stocksArr[currentStock].GetComponent<SpriteRenderer>().sprite = emptyStock;
             currentStock--;
             if (currentStock < 0)
@@ -35,7 +36,7 @@ public class Player1Stocks : MonoBehaviour
     public void resetStocks()
     {
         for (int i = 0; i < numStocks; i++)
-            stocksArr[i].GetComponent<SpriteRenderer>().sprite = player1Stock;
+            stocksArr[i].GetComponent<SpriteRenderer>().sprite = player2Stock;
         currentStock = numStocks - 1;
     }
 }
