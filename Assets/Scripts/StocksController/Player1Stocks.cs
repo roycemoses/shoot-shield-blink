@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player1Stocks : MonoBehaviour
 {
     public GameObject[] stocksArr;
+    public GameObject gameController;
     public Sprite emptyStock;
     public Sprite player1Stock;
     public int numStocks;
@@ -15,6 +16,7 @@ public class Player1Stocks : MonoBehaviour
         stocksArr = new GameObject[numStocks];
         for (int i = 0; i < numStocks; i++)
             stocksArr[i] = this.gameObject.transform.GetChild(i).gameObject;
+        gameController = GameObject.Find("GameController");
         emptyStock = GameObject.Find("EmptyStock").GetComponent<SpriteRenderer>().sprite;
         player1Stock = GameObject.Find("Player1Stock").GetComponent<SpriteRenderer>().sprite;
         numStocks = 3;
@@ -28,7 +30,9 @@ public class Player1Stocks : MonoBehaviour
             stocksArr[currentStock].GetComponent<SpriteRenderer>().sprite = emptyStock;
             currentStock--;
             if (currentStock < 0)
-                resetStocks();
+                gameController.GetComponent<GameController>().GameOver();
+            else
+                gameController.GetComponent<GameController>().RoundStart();
         }
     }
 

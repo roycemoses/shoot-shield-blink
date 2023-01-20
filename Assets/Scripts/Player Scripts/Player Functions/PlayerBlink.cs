@@ -44,9 +44,6 @@ public class PlayerBlink : MonoBehaviour
                 else if (blinkToPosition.y > Bounds.Ymax)
                     blinkToPosition = new Vector3(blinkToPosition.x, Bounds.Ymax - blinkAlign, 0);
 
-
-                Debug.Log("distanceTraveled: " + (blinkToPosition - originalPosition).magnitude);
-
                 transform.position = blinkToPosition;
                 nextAttackTime = Time.time + 1f / blinkRate;
             }

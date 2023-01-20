@@ -50,8 +50,8 @@ public class PlayerProjectile : MonoBehaviour
             }
             else
             {
+                hitPlayer.collider.transform.GetComponent<PlayerStats>().SetHealth(0);
                 hitPlayer.collider.transform.GetComponent<PlayerStats>().DecrementStock();
-                hitPlayer.collider.transform.GetComponent<PlayerStats>().SetHealth(1f);
             }
             Destroy(gameObject);
         }
